@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Google fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+
+    <!-- CSRF Token -->
+    <meta name="_token" content="{{ csrf_token() }}">
+
+    <title inertia>Sem titulo</title>
+    <meta name="keywords" content="" inertia>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{url()->current()}}">
+    <meta property="og:title" content="Sem titulo">
+    <meta property="og:description" content="Sem descrição">
+    <meta property="og:image" content="">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{url()->current()}}">
+    <meta property="twitter:title" content="Sem titulo">
+    <meta property="twitter:description" content="Sem descrição">
+    <meta property="twitter:image" content="">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="theme-color" content="#3b7977">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+        integrity="sha512-wnea99uKIC3TJF7v4eKk4Y+lMz2Mklv18+r4na2Gn1abDRPPOeef95xTzdwGD9e6zXJBteMIhZ1+68QC5byJZw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        .b-example-divider {
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+        }
+
+        .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
+        }
+
+        .bi {
+            vertical-align: -.125em;
+            fill: currentColor;
+        }
+
+        .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+        }
+
+        .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+    </style>
+</head>
+
+<body class="relative min-h-screen font-sans antialiased" data-mode="web" id="page-top">
+    <!-- Navigation-->
+
+
+
+    <div class="min-h-screen bg-gray-100">
+        <nav class="bg-white border-b border-gray-100">
+            <!-- Primary Navigation Menu -->
+            <div class="max-w-7xl mx-auto px-8 sm:px-6 lg:px-8">
+                <div class="flex justify-around px-0 md:px-8 md:mx-8 h-16">
+                    <div class="flex">
+                        <!-- Logo -->
+                        <div class="shrink-0 flex items-center mr-auto">
+                            <Link href="route('dashboard.index')">
+                            <JetApplicationMark class="block h-10 w-auto" />
+                            </Link>
+                        </div>
+
+                        <!-- Navigation Links -->
+                        <div class="hidden text-center space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <a class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition"
+                                style="color:#010066;" href="route('index.index')"
+                                :active="route().current('index.index')">
+                                HOME
+                            </a>
+                            <a class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition"
+                                style="color:#010066;" href="route('blog.index')"
+                                :active="route().current('blog.index')">
+                                BLOG
+                            </a>
+                            <a class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition"
+                                style="color:#010066;" href="route('dashboard.index')"
+                                :active="route().current('dashboard.index')">
+                                QUEM SOMOS
+                            </a>
+                            <a class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition"
+                                style="color:#010066;" href="route('contact')"
+                                :active="route().current('dashboard.index')">
+                                O PROJETO
+                            </a>
+                            <a class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition"
+                                style="color:#010066;" href="route('contact')"
+                                :active="route().current('dashboard.index')">
+                                CONTATO
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="hidden sm:flex sm:items-center sm:ml-6">
+                        <a href="route('login')" class="px-4 py-2 text-white hidden md:block"
+                            style="background: #ff6600;">Cadastre-se</a>
+                        <a href="route('register')" class="px-4 py-2 text-white" style="background: #2b1c55;">Login</a>
+                    </div>
+
+                    <!-- Hamburger -->
+                    <div class="-mr-2 flex items-center sm:hidden">
+                        <button
+                            class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition"
+                            @click="showingNavigationDropdown = ! showingNavigationDropdown">
+                            <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                                <path
+                                    :class="{'hidden': showingNavigationDropdown, 'inline-flex': ! showingNavigationDropdown }"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16" />
+                                <path
+                                    :class="{'hidden': ! showingNavigationDropdown, 'inline-flex': showingNavigationDropdown }"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Responsive Navigation Menu -->
+            <div :class="{'block': showingNavigationDropdown, 'hidden': ! showingNavigationDropdown}" class="sm:hidden">
+                <div class="pt-2 pb-3 space-y-1">
+                    <a class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition"
+                        style="color:#010066;" href="route('index.index')" :active="route().current('index.index')">
+                        HOME
+                    </a>
+                    <a class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition"
+                        style="color:#010066;" href="route('blog.index')" :active="route().current('blog.index')">
+                        BLOG
+                    </a>
+                    <a class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition"
+                        style="color:#010066;" href="route('dashboard.index')"
+                        :active="route().current('dashboard.index')">
+                        QUEM SOMOS
+                    </a>
+                    <a class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition"
+                        style="color:#010066;" href="route('contact')" :active="route().current('dashboard.index')">
+                        O PROJETO
+                    </a>
+                    <a class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition"
+                        style="color:#010066;" href="route('contact')" :active="route().current('dashboard.index')">
+                        CONTATO
+                    </a>
+                </div>
+
+                <!-- Responsive Settings Options -->
+                <div class="pt-4 pl-2 pb-1 flex border-t border-gray-200">
+                    <Link href="route('login')" class="px-4 py-2 text-white mr-2" style="background: #ff6600;">
+                    Cadastre-se</Link>
+                    <Link href="route('register')" class="px-4 py-2 text-white" style="background: #2b1c55;">Login
+                    </Link>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mashead header-->
+        <header class="m-0 py-5" style="background: #0a0b47">
+            <div class="container px-5">
+                <div class="w-100 w-full align-items-center">
+                    <!-- Mashead text and app badges-->
+                    <div class="mb-5 mb-lg-0 text-center text-lg-start">
+                        <h1 style="font-size: 60px; color: #ff6600;" class=" display-1 lh-1 mb-3">Bate Papo 3º Setor.</h1>
+                        <p class="text-white lead fw-normal mb-5">Um projeto que instrui e capacita o
+                            terceiro setor,
+                            conectando diferentes universos artístico - culturais com foco nesse importante
+                            sustêntáculo
+                            da sociedade moderna.</p>
+                        <div class="d-flex flex-column flex-lg-row align-items-center"></div>
+                    </div>
+                    <div class="mb-3">
+                        <iframe style="border-radius: 20px;" width="100%" height="315" src="https://www.youtube.com/embed/QdbDX5zngcs"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="row gx-5 justify-content-center">
+                        <div class="flex items-center text-center mt-3 btn-group justify-content-center">
+                            <a class="btn btn-outline-light border-0 py-3 px-4 rounded-pill me-3 mr-3"
+                                style="background:#f66e16!important" href="#" target="_blank">Participe do bate
+                                papo!</a>
+                            <a class="btn btn-outline-light border-0 py-3 px-4 rounded-pill"
+                                style="background:#f66e16!important" href="#" target="_blank">Inscreva-se</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Quote/testimonial aside-->
+        <aside class="text-center bg-gradient-primary-to-secondary">
+            <div class="container px-5">
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-xl-8 justify-content-center">
+                        <div class="h2 fs-1 text-white mb-4">
+                            <p style="font-size: 30px;">Se você é um simpatizante ou atua diratamente com o
+                                terceiro
+                                setor, essa iniciativa foi pensada em você!</p>
+                            </div>
+                        <div class="d-flex h-100 text-center justify-content-center">
+                            <img src="assets/img/bate_papo_setor.png" alt="..." style="height: 6rem" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!-- App features section-->
+        <section id="features">
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center">
+                    <div class="col-lg-8 order-lg-1 mb-5 mb-lg-0">
+                        <div class="container-fluid px-5">
+                            <div class="row gx-5">
+                                <div class="col-md-6 mb-5">
+                                    <!-- Feature item-->
+                                    <div class="text-center">
+                                        <i class="bi bi-display icon-feature text-gradient d-block mb-3"></i>
+                                        <h3 class="font-alt">Webnários</h3>
+                                        <p class="text-muted mb-0">4 Webnários abertos a todos os públicos!</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-5">
+                                    <!-- Feature item-->
+                                    <div class="text-center">
+                                        <i
+                                            class="bi bi-chat-left-quote-fill icon-feature text-gradient d-block mb-3"></i>
+                                        <h3 class="font-alt">Oficinas</h3>
+                                        <p class="text-muted mb-0">Mais de 10 horas de oficinas gravadas na nossa
+                                            plataforma!</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-5 mb-md-0">
+                                    <!-- Feature item-->
+                                    <div class="text-center">
+                                        <i class="bi bi-lightbulb icon-feature text-gradient d-block mb-3"></i>
+                                        <h3 class="font-alt">Mentoria</h3>
+                                        <p class="text-muted mb-0">50 horas de mentoria personalizada!</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <!-- Feature item-->
+                                    <div class="text-center">
+                                        <i class="bi bi-person-square icon-feature text-gradient d-block mb-3"></i>
+                                        <h3 class="font-alt">Convidados</h3>
+                                        <p class="text-muted mb-0"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-5 mb-md-0">
+                                    <!-- Feature item-->
+                                    <div class="text-center">
+                                        <i class="bi bi-images icon-feature text-gradient d-block mb-3"></i>
+                                        <h3 class="font-alt">Exibições</h3>
+                                        <p class="text-muted mb-0">Exibições artísticas de variadas linguagens!</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <!-- Feature item-->
+                                    <div class="text-center">
+                                        <i class="bi-patch-check icon-feature text-gradient d-block mb-3"></i>
+                                        <h3 class="font-alt">Certificado</h3>
+                                        <p class="text-muted mb-0">Certificado de capacitação livre de 30 horas!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 order-lg-0">
+                        <!-- Colocar video ou foto aqui-->
+                        <iframe style="border-radius: 10px;" width="100%" height="315" src="https://www.youtube.com/embed/QdbDX5zngcs"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>                                            
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="w-full py-5 text-center" style="background:#ff6600">
+            <div class="contaiuner  mx-5">
+                <div class="row">
+                    <div class="col-lg-6 col-md-8 mx-auto">
+                        <h2 style="font-size: 60px;" class="fw-light h2 fs-1 text-white mb-4">Assista aos últimos vídeos do nosso canal</h1>
+                    </div>
+                </div>
+
+                <div class="album py-3">
+                    <div class="container">
+                        <div class="row g-2">
+                            <div class="col-12 col-md-4">
+                                <iframe width="100%" height="auto" src="https://www.youtube.com/embed/gEpnjkwwSbo"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <iframe width="100%" height="auto" src="https://www.youtube.com/embed/gEpnjkwwSbo"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <iframe width="100%" height="auto" src="https://www.youtube.com/embed/gEpnjkwwSbo"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex h-100 text-center justify-content-center">
+                    <div class="px-3">
+                        <h4 class="text-white mb-4">Fique por dentro de tudo o que acontece clicando abaixo</h1>
+                            <p class="lead"></p>
+                            <p class="lead">
+                                <a href="https://www.youtube.com/c/EMPREENDEDORP%C3%9ABLICO"
+                                    class="btn btn-light bg-white btn-lg fw-bold">Inscreva-se no canal</a>
+                            </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Basic features section-->
+        <section class="bg-light">
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center justify-content-center justify-content-lg-between">
+                    <div class="col-12 col-lg-5">
+                        <h2 style="color: #f66e16;" class="display-4 lh-1 mb-4">Temas abordados:</h2>
+                        <p class="lead fw-normal text-muted mb-5 mb-lg-0"> - O que é 3º Setor?</p>
+                        <p class="lead fw-normal text-muted mb-5 mb-lg-0"> - O que é MROSC?</p>
+                        <p class="lead fw-normal text-muted mb-5 mb-lg-0"> - Políticas Públicas</p>
+                        <p class="lead fw-normal text-muted mb-5 mb-lg-0"> - Gestão de Entidade</p>
+                        <p class="lead fw-normal text-muted mb-5 mb-lg-0"> - Estatuto</p>
+                        <p class="lead fw-normal text-muted mb-5 mb-lg-0"> - Elaboração de Projeto</p>
+                        <p class="lead fw-normal text-muted mb-5 mb-lg-0"> - Captação de Recursos</p>
+                        <p class="lead fw-normal text-muted mb-5 mb-lg-0"> - Leis Orçamentárias</p>
+                        <p class="lead fw-normal text-muted mb-5 mb-lg-0"> - Prestação de Contas e mais</p>
+                    </div>
+                    <div class="col-sm-8 col-md-6">
+                        <div class="px-5 px-sm-0"><img class="img-fluid rounded-circle"
+                                src="https://source.unsplash.com/u8Jn2rzYIps/900x900" alt="..." /></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Call to action section-->
+        <!-- Footer-->
+        <footer>
+            <div class="py-4" style="background:#ff6600">
+                <div class="container px-5">
+                    <h1 class="font-semibold text-white mb-5">
+                        Ficou interessado em participar?
+                    </h1>
+                    <div class="row">
+                        <p class="col-12 text-center text-white lead fw-normal mb-3"> Quando acontecerá:</p>
+                        <p class="col-12 col-md text-white lead fw-normal mb-5 mb-lg-0"> 1º Webnário<br> 02/07/2022 -
+                            Julho</p>
+                        <p class="col-12 col-md text-white lead fw-normal mb-5 mb-lg-0"> 2º Webnário<br> 09/07/2022 -
+                            Julho</p>
+                        <p class="col-12 col-md text-white lead fw-normal mb-5 mb-lg-0"> 3º Webnário<br> 16/07/2022 -
+                            Julho</p>
+                        <p class="col-12 col-md text-white lead fw-normal mb-5 mb-lg-0"> 4º Webnário<br> 23/07/2022 -
+                            Julho</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="w-full" style="background:#ff6600">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="visual"
+                    viewBox="0 0 1080 75" width="100%" version="1.1">
+                    <path
+                        d="M0 57L25.7 55.3C51.3 53.7 102.7 50.3 154.2 49.2C205.7 48 257.3 49 308.8 50.3C360.3 51.7 411.7 53.3 463 55.7C514.3 58 565.7 61 617 60.7C668.3 60.3 719.7 56.7 771.2 54.7C822.7 52.7 874.3 52.3 925.8 53.2C977.3 54 1028.7 56 1054.3 57L1080 58L1080 76L1054.3 76C1028.7 76 977.3 76 925.8 76C874.3 76 822.7 76 771.2 76C719.7 76 668.3 76 617 76C565.7 76 514.3 76 463 76C411.7 76 360.3 76 308.8 76C257.3 76 205.7 76 154.2 76C102.7 76 51.3 76 25.7 76L0 76Z"
+                        fill="#2b1c55" stroke-linecap="round" stroke-linejoin="miter" />
+                </svg>
+                <div class="pt-2" style="background:#2b1c55">
+                    <img class="w-full" width="100%" height="auto" src="/partner.png">
+                </div>
+            </div>
+        </footer>
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+
+        <!-- Optional JavaScript other -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>
